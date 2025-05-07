@@ -10,17 +10,17 @@
 <body class="font-sans text-gray-800">
 
   <!-- Navigation Bar -->
-  <nav id="navbar" class="bg-transparent fixed top-0 left-0 w-full z-50 transition-all duration-300">
+  <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
         <!-- Logo -->
         <a href="#"><img src="images/Dos_Gallos.png" alt="Logo" style="width: 75px;" /></a>
         <!-- Desktop Menu -->
         <div class="hidden md:flex space-x-6 z-50">
-            <a href="#home" class="text-black hover:text-yellow-500 font-bold" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Home</a>
-            <a href="#services" class="text-black hover:text-yellow-500 font-bold" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Services</a>
-            <a href="#about" class="text-black hover:text-yellow-500 font-bold" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">About</a>
-            <a href="#gallery" class="text-black hover:text-yellow-500 font-bold" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Gallery</a>
-            <a href="#contact" class="text-black hover:text-yellow-500 font-bold" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Contact</a>
+            <a href="#home" class="text-black hover:text-green-700 font-bold" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Home</a>
+            <a href="#services" class="text-black hover:text-green-700 font-bold" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Services</a>
+            <a href="#about" class="text-black hover:text-green-700 font-bold" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">About</a>
+            <a href="#gallery" class="text-black hover:text-green-700 font-bold" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Gallery</a>
+            <a href="#contact" class="text-black hover:text-green-700 font-bold" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Contact</a>
         </div>
 
         <!-- Mobile Menu Button -->
@@ -34,11 +34,11 @@
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden md:hidden flex flex-col p-4 space-y-4">
         <!-- Mobile Menu Links -->
-            <a href="#home" class="text-black hover:text-yellow-500 font-bold" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Home</a>
-            <a href="#services" class="text-black hover:text-yellow-500 font-bold" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Services</a>
-            <a href="#about" class="text-black hover:text-yellow-500 font-bold" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">About</a>
-            <a href="#gallery" class="text-black hover:text-yellow-500 font-bold" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Gallery</a>
-            <a href="#contact" class="text-black hover:text-yellow-500 font-bold" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Contact</a>
+            <a href="#home" class="text-black hover:text-green-700 font-bold" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Home</a>
+            <a href="#services" class="text-black hover:text-green-700 font-bold" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Services</a>
+            <a href="#about" class="text-black hover:text-green-700 font-bold" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">About</a>
+            <a href="#gallery" class="text-black hover:text-green-700 font-bold" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Gallery</a>
+            <a href="#contact" class="text-black hover:text-green-700 font-bold" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Contact</a>
       </div>
   </nav>
 
@@ -239,16 +239,20 @@
     });
 
     // Mobile Menu Toggle
-    document.getElementById("menu-btn").addEventListener("click", function() 		{
-            let menu = document.getElementById("mobile-menu");
-            let navbar = document.getElementById("navbar");
+  document.getElementById("menu-btn").addEventListener("click", function () {
+    let menu = document.getElementById("mobile-menu");
+    let navbar = document.getElementById("navbar");
 
-            // Toggle the visibility of the mobile menu
-            menu.classList.toggle("hidden");
+    menu.classList.toggle("hidden");
 
-            // Toggle the background gradient on navbar when mobile menu is visible
-            navbar.classList.toggle("navbar-gradient", !menu.classList.contains("hidden"));
-        });
+    // Add gray background when menu is opened, remove it when closed (only on mobile)
+    if (!menu.classList.contains("hidden")) {
+      navbar.classList.add("bg-gray-100");
+    } else if (window.scrollY === 0) {
+      // Only remove if user hasn't scrolled (preserve bg if they have)
+      navbar.classList.remove("bg-gray-100");
+    }
+  });
 
         // Close the mobile menu when a link is clicked
         const mobileLinks = document.querySelectorAll("#mobile-menu a");
@@ -264,13 +268,13 @@
         });
 
         // Navbar background change on scroll
-        window.addEventListener("scroll", function() {
-            const navbar = document.getElementById("navbar");
-            if (window.scrollY > 50) { 
-                navbar.classList.add("bg-white-800", "bg-opacity-90");
-            } else {
-                navbar.classList.remove("bg-gray-800", "bg-opacity-90");
-            }
+        window.addEventListener('scroll', () => {
+          const navbar = document.getElementById('navbar');
+          if (window.scrollY > 10) {
+            navbar.classList.add('bg-gray-200', 'bg-opacity-90', 'shadow-md');
+          } else {
+            navbar.classList.remove('bg-gray-200', 'bg-opacity-90', 'shadow-md');
+          }
         });
   </script>
 </body>
