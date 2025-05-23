@@ -18,7 +18,6 @@
     }
 
     /* Navbar */
-    
     .navbar {
       border-bottom: 4px solid #CE2238;
     }
@@ -43,11 +42,6 @@
       font-size: 36px;
       font-weight: bold;
       margin-bottom: 16px;
-    }
-
-
-    #home a:hover {
-      background-color: #276749;
     }
 
     /* General Section Styling */
@@ -152,21 +146,6 @@
       margin-bottom: 24px;
     }
 
-    .btn-book-now {
-      background-color: #38a169;
-      color: white;
-      font-weight: 600;
-      padding: 12px 24px;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-    }
-
-    .btn-book-now:hover {
-      background-color: #2f855a;
-    }
-
     .about-image {
       flex: 1;
       max-width: 50%;
@@ -236,6 +215,7 @@
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       text-decoration: none;
       transition: background-color 0.3s ease;
+      border: none;
     }
 
     .primary-btn:hover {
@@ -443,7 +423,7 @@
   <!-- Hero Section -->
   <section id="home">
     <h2 class ="scroll-fade">Quality Work, at an Affordable Price!</h2>
-    <div class="scroll-fade primary-btn"><a href="#contact" >Book Now</a>
+    <div class="scroll-fade"><a href="#contact" class="primary-btn" >Book Now</a>
   </section>
 
   <!-- Services Section -->
@@ -533,7 +513,7 @@
             We are a landscaping service that takes great pride in their work. Here at Dos Gallos, we treat every project as if it were our own. We strive to deliver timely, reliable, and quality work. From employees with great experience to reliable tools and machinery to get the job done. Our biggest success on a project is being recommended. Please reach out with any questions.
           </p>
           <p class="about-signature">Sincerely,<br>Dos Gallos Team</p>
-          <a href="#contact" class="btn-book-now">Book Now</a>
+          <a href="#contact" class="primary-btn">Book Now</a>
         </div>
         <div class="about-image scroll-fade">
           <img src="https://static.wixstatic.com/media/d99169_7388fedba3ab44e4ad8ffe1d05a1117b~mv2_d_4608_3072_s_4_2.jpg/v1/fill/w_704,h_926,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/d99169_7388fedba3ab44e4ad8ffe1d05a1117b~mv2_d_4608_3072_s_4_2.jpg" alt="Dos Gallos Landscaping" />
@@ -559,7 +539,7 @@
           <p class="quote-description">
             Let us help you transform your outdoor space! Reach out today for a free, no-obligation quote tailored to your landscaping needs.
           </p>
-          <a href="#contact" class="button-1">Book Now</a>
+          <a href="#contact" class="primary-btn">Book Now</a>
           <p class="quote-call">
             Or Call Us: <a href="tel:2244890395">224-489-0395</a>
           </p>
@@ -618,7 +598,7 @@
         <input type="text" placeholder="Your Name" required />
         <input type="email" placeholder="Your Email" required />
         <textarea placeholder="Your Message" required></textarea>
-        <button type="submit" class="button-1">Send Message</button>
+        <button type="submit" class="primary-btn">Send Message</button>
       </form>
     </div>
   </section>
