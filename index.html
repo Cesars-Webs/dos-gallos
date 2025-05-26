@@ -1,4 +1,4 @@
-
+f
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,9 +27,31 @@
       width: auto;
     }
     
+    /* Navbar Hover Animation */
+    .navbar-nav .nav-link {
+      position: relative;
+      color: #2d3748;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    
+    .navbar-nav .nav-link::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #CE2238;
+      transition: width 0.3s ease;
+    }
+    
     .navbar-nav .nav-link:hover {
-      color: #CE2238; 
-      text-decoration: underline;
+      color: #CE2238;
+    }
+    
+    .navbar-nav .nav-link:hover::after {
+      width: 100%;
     }
 
     /* Hero Section */
