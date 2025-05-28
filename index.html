@@ -55,20 +55,80 @@
 
     /* Hero Section */
     #home {
-      background: url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdHR6NDd6cmRuNjk0dHF0dnRmYWtvYTN4ODVpaWRlaDdrb2Z1bmdvMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/a1usP8aplIdOQ09GaN/giphy.gif') center center / cover no-repeat;
+      background-color: #1a202c;
       color: white;
-      text-align: center;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      text-align: left;
+      padding-top: 120px;
+      padding-bottom: 40px;
     }
 
-    #home h2 {
-      font-size: 36px;
-      font-weight: bold;
-      margin-bottom: 16px;
+    .hero-content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .hero-left {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .hero-title {
+      font-size: 3rem;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-weight: 900;
+      line-height: 1.2;
+      color: #f7fafc;
+    }
+
+    .hero-subtext {
+      font-size: 1.2rem;
+      margin: 20px 0;
+      color: #e2e8f0;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    /* GIF Styling */
+    .hero-right img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+      .hero-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-left, .hero-right {
+        max-width: 100%;
+      }
+
+      .hero-title {
+        font-size: 2.25rem;
+      }
+
+      .hero-subtext {
+        font-size: 1rem;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .hero-right {
+        margin-top: 20px;
+      }
     }
 
     /* General Section Styling */
@@ -263,6 +323,7 @@
 
     .secondary-btn:hover {
       background-color: gray;
+      color: white;
     }
 
     .quote-call {
@@ -465,8 +526,19 @@
 
   <!-- Hero Section -->
   <section id="home">
-    <h2 class ="scroll-fade">Quality Work, at an Affordable Price!</h2>
-    <div class="scroll-fade"><a href="#contact" class="primary-btn" >Book Now</a>
+    <div class="hero-content container">
+      <div class="hero-left">
+        <h1 class="hero-title">Quality Work, at an Affordable Price!</h1>
+        <p class="hero-subtext">Professional landscaping services with attention to detail, affordable pricing, and reliable service.</p>
+        <div class="hero-buttons">
+          <a href="#contact" class="primary-btn">Book Now</a>
+          <a href="#services" class="secondary-btn">Our Services</a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdHR6NDd6cmRuNjk0dHF0dnRmYWtvYTN4ODVpaWRlaDdrb2Z1bmdvMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/a1usP8aplIdOQ09GaN/giphy.gif" alt="Landscaping Animation" />
+      </div>
+    </div>
   </section>
 
   <!-- Services Section -->
