@@ -24,8 +24,16 @@
     .navbar-logo {
       max-height: 60px;
       width: auto;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     
+    /* Logo Hover Effect */
+    .navbar-logo:hover {
+        transform: scale(1.1);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+
     /* Navbar Hover Animation */
     .navbar-nav .nav-link {
       position: relative;
