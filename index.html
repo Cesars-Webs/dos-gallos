@@ -17,55 +17,49 @@
     }
 
     /* Navbar */
- /* Navbar */
-.navbar {
-  border-bottom: 4px solid #CE2238; /* red bottom border for navbar */
-}
+    .navbar {
+      border-bottom: 4px solid #CE2238;
+    }
+    
+    .navbar-logo {
+      max-height: 60px;
+      width: auto;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 50%;
+    }
+    
+    /* Logo Hover Effect */
+    .navbar-logo:hover {
+        transform: scale(1.1);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
 
-/* Logo */
-.navbar-logo {
-  max-height: 60px;
-  width: auto;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Logo Hover Effect */
-.navbar-logo:hover {
-  transform: scale(1.1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-/* Navbar links */
-.navbar-nav .nav-link {
-  position: relative;
-  color: #2d3748;
-  font-weight: bold;
-  transition: color 0.3s ease;
-}
-
-/* Underline effect setup */
-.navbar-nav .nav-link::after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 3px;
-  bottom: -8px; /* space below the text */
-  left: 0;
-  background-color: #CE2238; /* red underline */
-  transition: width 0.3s ease;
-  border-radius: 2px;
-}
-
-/* Animate underline on hover */
-.navbar-nav .nav-link:hover::after {
-  width: 100%;
-}
-
-/* Keep underline on active link */
-.navbar-nav .nav-link.active::after {
-  width: 100%;
-}
-
+    /* Navbar Hover Animation */
+    .navbar-nav .nav-link {
+      position: relative;
+      color: #2d3748;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    
+    .navbar-nav .nav-link::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #CE2238;
+      transition: width 0.3s ease;
+    }
+    
+    .navbar-nav .nav-link:hover {
+      color: #CE2238;
+    }
+    
+    .navbar-nav .nav-link:hover::after {
+      width: 100%;
+    }
 
     /* Hero Section */
     #home {
