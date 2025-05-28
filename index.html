@@ -532,8 +532,8 @@
 
   <!-- Hero Section -->
   <section id="home">
-    <div class="hero-content container scroll-fade">
-      <div class="hero-left">
+    <div class="hero-content container">
+      <div class="hero-left scroll-fade">
         <h1 class="hero-title">Quality Work, at an Affordable Price!</h1>
         <p class="hero-subtext">Professional landscaping services with attention to detail, affordable pricing, and reliable service.</p>
         <div class="hero-buttons">
@@ -541,7 +541,7 @@
           <a href="#services" class="secondary-btn">Our Services</a>
         </div>
       </div>
-      <div class="hero-right">
+      <div class="hero-right scroll-fade">
         <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdHR6NDd6cmRuNjk0dHF0dnRmYWtvYTN4ODVpaWRlaDdrb2Z1bmdvMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/a1usP8aplIdOQ09GaN/giphy.gif" alt="Landscaping Animation" />
       </div>
     </div>
@@ -711,21 +711,42 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      const observer = new IntersectionObserver(
-        entries => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('show');
-            }
-          });
-        },
-        {
-          threshold: 0.1
-        }
-      );
-  
-      const elements = document.querySelectorAll('.scroll-fade');
-      elements.forEach(el => observer.observe(el));
+      const scrollElements = document.querySelectorAll(".scroll-fade");
+
+      function elementInView(el, offset = 0) {
+        const elementTop = el.getBoundingClientRect().top;
+        return (
+          elementTop <= (window.innerHeight || document.documentElement.clientHeight) - offset
+        );
+      }
+
+      function elementOutOfView(el) {
+        const elementTop = el.getBoundingClientRect().top;
+        const elementBottom = el.getBoundingClientRect().bottom;
+        return elementBottom < 0 || elementTop > window.innerHeight;
+      }
+
+      function displayScrollElement(el) {
+        el.classList.add("show");
+      }
+
+      function hideScrollElement(el) {
+        el.classList.remove("show");
+      }
+
+      function handleScrollAnimation() {
+        scrollElements.forEach((el) => {
+          if (elementInView(el, 100)) {
+            displayScrollElement(el);
+          } else if (elementOutOfView(el)) {
+            hideScrollElement(el);
+          }
+        });
+      }
+
+      window.addEventListener("scroll", handleScrollAnimation);
+      window.addEventListener("resize", handleScrollAnimation);
+      handleScrollAnimation(); // initial check
     });
   </script>
   
